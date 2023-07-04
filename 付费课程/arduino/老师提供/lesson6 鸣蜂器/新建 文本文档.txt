@@ -1,0 +1,26 @@
+int buffer = 13;
+unsigned int frq1[] = {262,294,330,349,392,440,494};
+unsigned int frq2[] = {523,587,659,698,784,880,988};
+unsigned int frq3[] = {1046,1175,1318,1397,1568,1760,1976};
+void tune(int i) {
+ digitalWrite(buffer,HIGH);
+ delay(1000/frq3[i]/2);
+ digitalWrite(buffer,LOW);
+ delay(1000/frq3[i]/2);
+}
+void setup() {
+
+pinMode(buffer,OUTPUT);
+
+
+}
+void loop() {
+
+//
+// { for(int i=0;i<50;i++)
+          //  { tune(j);}}
+         for(int i=0;i<7;i++)   
+         { tone(buffer,frq1[i],500);
+           delay(1000);}
+
+}
